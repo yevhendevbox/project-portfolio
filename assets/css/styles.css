@@ -1,8 +1,193 @@
-body {
-  font-family: 'Lato', sans-serif;
+/* ============================= =================================
+                          Fonts import
+============================= ================================= */
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@600&family=Ubuntu:wght@400;700&display=swap');
+
+/* ============================= =================================
+                          CSS VARIABLES
+============================= ================================= */
+
+:root {
+  --black: #313132;
+  --midnight-dream: #323436;
+  --onyx: #353434;
+  --black-jack: #3D3D3E;
+  --black-horizon: #44484d;
+  --snow-white: #f1f5f1;
+  --accent: #d4653e;
+
+  --ff-h: 'Sofia Sans Extra Condensed', sans-serif;
+  --ff-p: 'Roboto', sans-serif;
+
+  --fz-lg: 2rem;
+  --fz-md: 1.6rem;
+  --fz-sm: 1.4rem;
+
+  --bold: 700;
+  --regular: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather Sans', sans-serif;
-  font-weight: 700;
+/* ============================= =================================
+                         Global Styles
+============================= ================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-p);
+  font-size: 10px;
+  background: var(--black-horizon);
+  color: var(--snow-white);
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero__title {
+  font-family: var(--ff-h);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+}
+.flex {
+  display: flex;
+}
+.container {
+  width: 98%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+.header {
+  position: relative;
+  background-color: var(--ebony-king);
+  padding: .8em 0;
+  font-size: var(--fz-md);
+}
+
+.header .container {
+  justify-content: space-between;
+}
+.header-links__wrapper {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: black;
+  transform: translateY(-100%);
+  transition: all .8s cubic-bezier(0.51, 0.48, 0.29, 0.98);
+}
+.header-links {
+  font-size: 4rem;
+  flex-direction: column;
+  gap: 1em;
+  letter-spacing: -2px;
+  text-align: left;
+  position: absolute;
+  transform: translate(0, 50%);
+}
+.header-links span {
+  font-size: var(--fz-sm);
+  margin-right: 1em;
+}
+.header-links a {
+  transition: all .2s ease-in-out;
+  opacity: .6;
+}
+.header-links a:hover {
+  opacity: 1;
+}
+.header-brand {
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+}
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  gap: 1rem;
+  padding: .5rem 0;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.button-line {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  transition: all .2s ease-in-out;
+  transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+.open {
+  transform: translateY(0);
+}
+.toggled .button-line:first-child {
+  transform: translate3d(0px, .5rem, 0px) rotateZ(45deg);
+}
+.toggled .button-line:last-child {
+  transform: translate3d(0px, -.5rem, 0px) rotateZ(-45deg);
+}
+.router-link-active,
+.router-link-exact-active {
+  opacity: 1 !important;
+}
+.hero {
+  padding: 8em 0 2em 0;
+}
+.hero__heading {
+  font-size: 70rem;
+  line-height: .8;
+  letter-spacing: -40px;
+  overflow: hidden;
+}
+.footer {
+  padding: 2rem 0;
+  font-size: var(--fz-md);
+}
+.footer_content,
+.social-links {
+  display: flex;
+  gap: 4em;
+}
+.social-links {
+  gap: 1em;
+}
+.skills {
+  padding: 2em 0;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  background-color: var(--black);
+}
+.skills-wrapper {
+
 }

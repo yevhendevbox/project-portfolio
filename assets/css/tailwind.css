@@ -1,7 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply h-full leading-normal bg-zinc-700 text-gray-300;
-}
