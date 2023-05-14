@@ -6,27 +6,34 @@
           <p>© 2023 Yevhen Dovhan. All rights reserved.</p>
         </div>
         <ul class="social-links">
-          <li>
-            <a href="#">
-              <Icon name="uil:linkedin" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <Icon name="uil:github" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <Icon name="uil:twitter" />
-            </a>
-          </li>
+          <base-social-link
+            v-for="link in socialLinks"
+            :key="link.icon"
+            :href="link.url"
+          >
+            <Icon :name="link.icon" />
+          </base-social-link>
         </ul>
       </div>
     </div>
   </footer>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+const socialLinks = [
+  {
+    icon: 'uil:linkedin',
+    url: '#',
+  },
+  {
+    icon: 'uil:github',
+    url: '#',
+  },
+  {
+    icon: 'uil:twitter',
+    url: '#',
+  },
+];
+</script>
 
 <style scoped></style>

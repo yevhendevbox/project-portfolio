@@ -68,6 +68,9 @@ h6,
   font-weight: var(--bold);
   text-transform: uppercase;
 }
+.hero__title {
+  padding-bottom: 10em;
+}
 .flex {
   display: flex;
 }
@@ -189,5 +192,26 @@ h6,
   background-color: var(--black);
 }
 .skills-wrapper {
-
+  padding: 4em 2em;
+  display: grid;
+  gap: 3em;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: auto;
+}
+.skill {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: 50px;
+  background-color: var(--black-horizon);
+  font-size: var(--fz-lg);
+}
+.skill-icon {
+  font-size: 7rem;
+}
+.skill-description {
+  line-height: 2;
 }

@@ -1,6 +1,7 @@
 <template>
   <div class="hero">
     <div class="hero__title">
+      <h1>whoami</h1>
       <div class="hero__heading">
         <span>Y</span>
         <span>E</span>
@@ -21,6 +22,7 @@
     <div class="hero__description"></div>
     <section class="skills">
       <div class="container">
+        <h2>Hard Skills</h2>
         <div class="skills-wrapper">
           <base-skill
             v-for="skill in skills"
@@ -55,7 +57,7 @@ const skills: Array<SkillInterface> = [
   },
   {
     name: 'Nuxt.js',
-    icon: 'logos:nuxt',
+    icon: 'logos:nuxt-icon',
     description:
       'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
   },
