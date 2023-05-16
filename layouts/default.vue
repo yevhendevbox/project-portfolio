@@ -1,14 +1,5 @@
 <template>
-  <div>
-    <the-navbar />
-    <!-- Pages content goes here -->
-    <main>
-      <div>
-        <slot />
-      </div>
-    </main>
-    <the-footer />
-  </div>
+  <div></div>
 </template>
 
 <script setup lang="ts"></script>

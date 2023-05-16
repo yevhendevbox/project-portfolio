@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     '@nuxt/devtools-edge',
     'nuxt-icon',
   ],
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    },
+  },
   runtimeConfig: {
     public: {
       url: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
