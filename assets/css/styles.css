@@ -16,6 +16,8 @@
   --snow-white: #f1f5f1;
   --accent: #d4653e;
 
+  --gradient: linear-gradient(135deg, #69FF97 10%, #00E4FF 100%);
+
   --ff-h: 'Sofia Sans Extra Condensed', sans-serif;
   --ff-p: 'Roboto', sans-serif;
 
@@ -53,6 +55,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+img {
+  width: 100%;
+  display: block;
+}
 ul {
   padding: 0;
   list-style: none;
@@ -68,6 +74,9 @@ h6,
   font-weight: var(--bold);
   text-transform: uppercase;
 }
+.page-wrapper {
+  flex: 1;
+}
 .hero__title {
   padding-bottom: 10em;
 }
@@ -79,6 +88,14 @@ h6,
   max-width: 1800px;
   margin: 0 auto;
 }
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* ============================= =================================
+                         Header Styles
+============================= ================================= */
 .header {
   position: relative;
   background-color: var(--ebony-king);
@@ -98,10 +115,10 @@ h6,
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: black;
   transform: translateY(-100%);
-  transition: all .8s cubic-bezier(0.51, 0.48, 0.29, 0.98);
+  transition: all .3s cubic-bezier(0.51, 0.48, 0.29, 0.98);
 }
 .header-links {
   font-size: 4rem;
@@ -138,7 +155,7 @@ h6,
   padding: .5rem 0;
   width: 30px;
   height: 30px;
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
@@ -164,6 +181,9 @@ h6,
 .router-link-exact-active {
   opacity: 1 !important;
 }
+/* ============================= =================================
+                         Hero Section Styles
+============================= ================================= */
 .hero {
   padding: 8em 0 2em 0;
 }
@@ -173,6 +193,9 @@ h6,
   letter-spacing: -40px;
   overflow: hidden;
 }
+/* ============================= =================================
+                         Footer Styles
+============================= ================================= */
 .footer {
   padding: 2rem 0;
   font-size: var(--fz-md);
@@ -185,14 +208,18 @@ h6,
 .social-links {
   gap: 1em;
 }
+/* ============================= =================================
+                         Skills Section Styles
+============================= ================================= */
 .skills {
+  position: relative;
   padding: 2em 0;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   background-color: var(--black);
 }
 .skills-wrapper {
-  padding: 4em 2em;
+  padding: 30em 2em 10em 2em;
   display: grid;
   gap: 3em;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -205,9 +232,15 @@ h6,
   align-items: center;
   gap: 2em;
   padding: 2em;
-  border-radius: 50px;
-  background-color: var(--black-horizon);
+  border-radius: 20px;
+  background-color: var(--black);
   font-size: var(--fz-lg);
+}
+.skill-bg {
+  padding: 1px;
+  border-radius: calc(20px + 1px);
+  background-image: var(--gradient);
+  opacity: .8;
 }
 .skill-icon {
   font-size: 7rem;
@@ -215,3 +248,138 @@ h6,
 .skill-description {
   line-height: 2;
 }
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+/* ============================= =================================
+                         About Page Styles
+============================= ================================= */
+.about-content {
+  width: 100%;
+  padding: 6em 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 4em;
+}
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  flex-grow: 1;
+  gap: 4em;
+  line-height: 2;
+  font-size: var(--fz-md);
+  font-family: var(--ff-p);
+}
+.about-text .content__action {
+  align-self: flex-start;
+}
+.about-photo {
+  flex-grow: 2;
+  align-self: flex-end;
+}
+.about-photo img{
+  margin: 0 auto;
+  max-width: 400px;
+}
+.about-title {
+  position: relative;
+}
+.about-title h1,
+.contact-title h1,
+.work-title h1,
+.bg-title {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-size: 40rem;
+  top: -.4em;
+  right: 0;
+  position: absolute;
+  opacity: .2;
+}
+.bg-title {
+  top: 0;
+}
+/* ============================= =================================
+                         Contact page Styles
+============================= ================================= */
+.contact-content {
+  display: flex;
+  min-height: 80vh;
+  gap: 2em;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--fz-md);
+  line-height: 2;
+}
+.contact-content ul a {
+  padding-bottom: 0;
+  border-bottom: 1px solid #fff;
+  transition: all .3s ease;
+}
+.contact-content ul a:hover {
+  text-decoration: line-through;
+  border: 0;
+}
+.content__action a {
+  text-transform: uppercase;
+  padding: 1rem .5em;
+  position: relative;
+  z-index: 1;
+}
+.content__action a::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  z-index: -1;
+}
+.content__action a:hover {
+  color: var(--midnight-dream);
+}
+.content__action a:hover::after {
+  width: 100%;
+  left: 0;
+}
+/* ============================= =================================
+                         Work page Styles
+============================= ================================= */
+.work-content {
+  padding: 12em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: auto;
+  gap: 3em;
+}
+.work-card {
+  max-height: 400px;
+  max-width: 450px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: var(--black);
+  overflow: hidden;
+}
+.work-card__info {
+  padding: 2em;
+  font-size: var(--fz-sm);
+}
+/* .work-card__pic img {
+  object-fit: cover;
+} */

@@ -1,10 +1,12 @@
 <template>
-  <div class="skill">
-    <div class="skill-icon">
-      <Icon :name="`${props.skill.icon}`" />
-    </div>
-    <div class="skill-description">
-      {{ props.skill.description }}
+  <div class="skill-bg">
+    <div class="skill">
+      <div class="skill-icon">
+        <Icon :name="`${props.skill.icon}`" />
+      </div>
+      <div class="skill-description">
+        {{ props.skill.description }}
+      </div>
     </div>
   </div>
 </template>

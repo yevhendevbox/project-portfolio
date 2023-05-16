@@ -1,28 +1,28 @@
 <template>
   <div class="hero">
-    <div class="hero__title">
-      <h1>whoami</h1>
-      <div class="hero__heading">
-        <span>Y</span>
-        <span>E</span>
-        <span>V</span>
-        <span>H</span>
-        <span>E</span>
-        <span>N</span>
-      </div>
-      <div class="hero__heading">
-        <span>D</span>
-        <span>O</span>
-        <span>V</span>
-        <span>H</span>
-        <span>A</span>
-        <span>N</span>
+    <div class="container">
+      <div class="hero__title">
+        <div class="hero__heading">
+          <span>Y</span>
+          <span>E</span>
+          <span>V</span>
+          <span>H</span>
+          <span>E</span>
+          <span>N</span>
+        </div>
+        <div class="hero__heading">
+          <span>D</span>
+          <span>O</span>
+          <span>V</span>
+          <span>H</span>
+          <span>A</span>
+          <span>N</span>
+        </div>
       </div>
     </div>
-    <div class="hero__description"></div>
     <section class="skills">
       <div class="container">
-        <h2>Hard Skills</h2>
+        <h2 class="bg-title">Hard Skills</h2>
         <div class="skills-wrapper">
           <base-skill
             v-for="skill in skills"
