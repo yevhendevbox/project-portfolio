@@ -6,3 +6,6 @@ export function isSkillUndefined(skill: SkillInterface): boolean {
 export function isStringValid(str: string): boolean {
   return typeof str === 'string';
 }
+export function isPropNotUndefined(prop: any): boolean {
+  return prop !== undefined;
+}

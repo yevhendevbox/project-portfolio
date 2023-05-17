@@ -1,67 +1,49 @@
 <template>
   <div class="container">
     <div class="work-title">
-      <h1>works</h1>
+      <h1>my works</h1>
     </div>
     <div class="work-content">
-      <div class="work-card">
-        <div class="work-card__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
-        </div>
-        <div class="work-card__info">
-          <h3>Random work title</h3>
-          <p>More details</p>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
-        </div>
-        <div class="work-card__info">
-          <h3>Random work title</h3>
-          <p>More details</p>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
-        </div>
-        <div class="work-card__info">
-          <h3>Random work title</h3>
-          <p>More details</p>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
-        </div>
-        <div class="work-card__info">
-          <h3>Random work title</h3>
-          <p>More details</p>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
-        </div>
-        <div class="work-card__info">
-          <h3>Random work title</h3>
-          <p>More details</p>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
-        </div>
-        <div class="work-card__info">
-          <h3>Random work title</h3>
-          <p>More details</p>
-        </div>
-      </div>
+      <base-work-card
+        v-for="project in projects"
+        :key="project.id"
+        :project="project"
+      />
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const projects = [
+  {
+    id: 1,
+    title: 'Home',
+    description: 'Cooperations social app',
+    imageSrc: 'home-ui.jpg',
+    type: 'position',
+  },
+  {
+    id: 2,
+    title: 'Form Settings App',
+    description: 'Project frontend dev position',
+    imageSrc: 'home-ui.jpg',
+    type: 'project',
+  },
+  {
+    id: 3,
+    title: 'Portolio app',
+    description: 'Personal web application',
+    imageSrc: 'home-ui.jpg',
+    type: 'project',
+  },
+  {
+    id: 4,
+    title: 'Weather tracking app',
+    description: 'Project frontend dev position',
+    imageSrc: 'home-ui.jpg',
+    type: 'project',
+  },
+];
+</script>
 
 <style scoped></style>

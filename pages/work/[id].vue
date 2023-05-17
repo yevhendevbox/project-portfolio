@@ -6,7 +6,7 @@
       </div>
       <div class="project-description">
         <div class="project-description__pic">
-          <img src="@/assets/images/smartmockups_lhoyn4be.jpg" alt="" />
+          <img src="@/assets/images/home-ui.jpg" alt="" />
           <div class="content__action">
             <NuxtLink to="/work">
               Back to work

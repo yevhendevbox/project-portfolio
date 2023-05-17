@@ -2,22 +2,13 @@
   <header class="header">
     <nav class="header-links__wrapper" :class="{ open: isOpen }">
       <ul class="header-links flex">
-        <nuxt-link to="/" @click="isOpen = false">
-          <span>1</span>
-          Home</nuxt-link
-        >
-        <nuxt-link to="/work" @click="isOpen = false">
-          <span>2</span>
-          Work</nuxt-link
-        >
-        <nuxt-link to="/about" @click="isOpen = false">
-          <span>3</span>
-          About</nuxt-link
-        >
-        <nuxt-link to="/contact" @click="isOpen = false">
-          <span>4</span>
-          Contact</nuxt-link
-        >
+        <base-menu-item
+          v-for="(link, index) in links"
+          :key="index"
+          :to="link.url"
+          :link="link"
+          @click="isOpen = false"
+        />
       </ul>
     </nav>
     <div class="container flex">
@@ -36,6 +27,28 @@
 
 <script setup lang="ts">
 const isOpen = ref(false);
+const links = [
+  {
+    id: '1',
+    url: '/',
+    label: 'Home',
+  },
+  {
+    id: '2',
+    url: '/work',
+    label: 'Work',
+  },
+  {
+    id: '3',
+    url: '/about',
+    label: 'About',
+  },
+  {
+    id: '4',
+    url: '/contact',
+    label: 'Contact',
+  },
+];
 const handleToggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
