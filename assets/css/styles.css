@@ -296,6 +296,7 @@ h6,
 .about-title h1,
 .contact-title h1,
 .work-title h1,
+.project-title h1,
 .bg-title {
   background: var(--gradient);
   background-clip: text;
@@ -380,6 +381,40 @@ h6,
   padding: 2em;
   font-size: var(--fz-sm);
 }
-/* .work-card__pic img {
-  object-fit: cover;
-} */
+.project-description {
+  display: flex;
+  gap: 4em;
+  font-size: var(--fz-md);
+}
+.project-description__pic {
+  padding: 4em 0;
+}
+.project-description__pic img {
+  min-width: 650px;
+  max-width: 650px;
+  margin-bottom: 4em;
+}
+.project-description__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8em 0 0 0;
+}
+.project-description__text ul {
+  padding: 2em;
+  list-style: circle;
+}
+.project-description__text ul li {
+  padding: 1em 0;
+}
+.project-description--tech {
+  font-size: var(--fz-md);
+}
+.project-description--tech h5 {
+  font-size: var(--fz-md);
+  margin-bottom: 1em;
+}
+.project-description--tech p {
+  line-height: 1.5;
+  font-weight: var(--bold);
+}
