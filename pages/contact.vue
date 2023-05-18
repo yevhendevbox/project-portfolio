@@ -21,16 +21,13 @@
           <a href="">Twitter</a>
         </li>
       </ul>
-      <div class="content__action">
-        <NuxtLink to="/">
-          Back to home
-          <Icon name="material-symbols:arrow-outward" />
-        </NuxtLink>
-      </div>
+      <base-button :to="PAGE_HOME" :label="LABEL_HOME">
+        <Icon name="material-symbols:arrow-outward" />
+      </base-button>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
-
-<style scoped></style>
+<script setup lang="ts">
+import { LABEL_HOME, PAGE_HOME } from '~/constants';
+</script>

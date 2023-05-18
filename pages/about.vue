@@ -25,15 +25,21 @@
           to any exciting projects that may come my way. If you are interested
           in working together, please do not hesitate to reach out to me.
         </p>
-        <div class="content__action">
-          <NuxtLink to="/">
-            Back to home
+        <div class="about-actions">
+          <base-button :to="PAGE_HOME" :label="LABEL_HOME">
             <Icon name="material-symbols:arrow-outward" />
-          </NuxtLink>
-          <NuxtLink to="/contact">
-            Contact
+          </base-button>
+          <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
             <Icon name="material-symbols:arrow-outward" />
-          </NuxtLink>
+          </base-button>
+          <base-button
+            :to="LINK_DOWNLOAD"
+            :label="LABEL_DOWNLOAD_CV"
+            target="_blank"
+            download
+          >
+            <Icon name="material-symbols:download" />
+          </base-button>
         </div>
       </div>
       <div class="about-photo">
@@ -43,6 +49,15 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {
+  LABEL_HOME,
+  LABEL_CONTACT,
+  LABEL_DOWNLOAD_CV,
+  PAGE_HOME,
+  PAGE_CONTACT,
+  LINK_DOWNLOAD,
+} from '~/constants';
+</script>
 
 <style scoped></style>

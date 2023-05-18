@@ -26,26 +26,27 @@
 </template>
 
 <script setup lang="ts">
+import { PAGE_HOME, PAGE_ABOUT, PAGE_WORK, PAGE_CONTACT } from '~/constants';
 const isOpen = ref(false);
 const links = [
   {
     id: '1',
-    url: '/',
+    url: PAGE_HOME,
     label: 'Home',
   },
   {
     id: '2',
-    url: '/work',
+    url: PAGE_WORK,
     label: 'Work',
   },
   {
     id: '3',
-    url: '/about',
+    url: PAGE_ABOUT,
     label: 'About',
   },
   {
     id: '4',
-    url: '/contact',
+    url: PAGE_CONTACT,
     label: 'Contact',
   },
 ];

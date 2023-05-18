@@ -7,16 +7,12 @@
       <div class="project-description">
         <div class="project-description__pic">
           <img src="@/assets/images/home-ui.jpg" alt="" />
-          <div class="content__action">
-            <NuxtLink to="/work">
-              Back to work
-              <Icon name="material-symbols:arrow-outward" />
-            </NuxtLink>
-            <NuxtLink to="/contact">
-              Contact
-              <Icon name="material-symbols:arrow-outward" />
-            </NuxtLink>
-          </div>
+          <base-button :to="PAGE_HOME" :label="LABEL_HOME">
+            <Icon name="material-symbols:arrow-outward" />
+          </base-button>
+          <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
+            <Icon name="material-symbols:arrow-outward" />
+          </base-button>
         </div>
         <div class="project-description__text">
           <div>
@@ -68,7 +64,11 @@
 </template>
 
 <script setup lang="ts">
+import {
+  LABEL_HOME,
+  LABEL_CONTACT,
+  PAGE_HOME,
+  PAGE_CONTACT,
+} from '~/constants';
 const route = useRoute();
 </script>
-
-<style scoped></style>
