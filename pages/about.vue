@@ -49,7 +49,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {
   LABEL_HOME,
   LABEL_CONTACT,

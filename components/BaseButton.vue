@@ -7,18 +7,18 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { isStringValid } from '~/validators';
+<script setup>
+import { isLabelValid } from '~/validators';
 
 const props = defineProps({
   label: {
     type: String,
     required: true,
-    validation: isStringValid,
+    validation: isLabelValid,
   },
 });
 </script>
-<script lang="ts">
+<script>
 export default {
   inheritAttrs: false,
 };

@@ -2,22 +2,7 @@
   <div class="hero">
     <div class="container">
       <div class="hero__title">
-        <div class="hero__heading">
-          <span>Y</span>
-          <span>E</span>
-          <span>V</span>
-          <span>H</span>
-          <span>E</span>
-          <span>N</span>
-        </div>
-        <div class="hero__heading">
-          <span>D</span>
-          <span>O</span>
-          <span>V</span>
-          <span>H</span>
-          <span>A</span>
-          <span>N</span>
-        </div>
+        <div class="hero__heading">YEVHEN DOVHAN</div>
       </div>
     </div>
     <section class="skills">
@@ -35,20 +20,17 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { SkillInterface } from '~/types';
-
-// const { findOne } = useStrapi();
+<script setup>
 useHead({
   title: 'Home | Y.D.',
   meta: [
     {
       name: 'description',
-      content: 'Personal portfolio home page, Yevhen Dovhan',
+      content: 'Personal portfolio Web application, Yevhen Dovhan',
     },
   ],
 });
-const skills: Array<SkillInterface> = [
+const skills = [
   {
     name: 'Vue.js',
     icon: 'logos:vue',
@@ -98,9 +80,5 @@ const skills: Array<SkillInterface> = [
       'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
   },
 ];
-// const media = useStrapiMedia('/uploads/hero_img_e13890e016.JPG');
-// const response = await findOne('hero-sections', 1);
-// const { Title, Subtitle } = response.data.attributes;
 </script>
-
 <style scoped></style>

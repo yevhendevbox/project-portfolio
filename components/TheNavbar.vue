@@ -25,7 +25,7 @@
   </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { PAGE_HOME, PAGE_ABOUT, PAGE_WORK, PAGE_CONTACT } from '~/constants';
 const isOpen = ref(false);
 const links = [

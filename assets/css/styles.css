@@ -291,7 +291,8 @@ h6,
 .about-title {
   position: relative;
 }
-.about-actions {
+.about-actions,
+.project-actions {
   display: flex;
   gap: 2em;
 }
@@ -393,8 +394,30 @@ h6,
   border-radius: 10px;
   padding: .5em 1em;
 }
-.work-card__info h3 {
+.work-card__info #work-card--title {
   font-size: 4rem;
+}
+#work-card--title {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+#work-card--title .line-1,
+#work-card--title .line-2 {
+  line-height: 1.2;
+}
+#work-card--title .line-1 {
+  opacity: .6;
+  transform: translateY(2.5rem);
+  transition: transform .3s ease;
+}
+#work-card--title .line-2 {
+  transform: translateY(4rem);
+  transition: transform .3s ease;
+}
+#work-card--title:hover .line-1 {
+  transform: translateY(-5rem);
+}
+#work-card--title:hover .line-2 {
+  transform: translateY(-2rem);
 }
 .project-description {
   display: flex;
@@ -411,9 +434,10 @@ h6,
 }
 .project-description__text {
   display: flex;
+  font-size: var(--fz-lg);
   flex-direction: column;
   justify-content: flex-end;
-  padding: 8em 0 0 0;
+  padding: 4em 0 0 0;
 }
 .project-description__text ul {
   padding: 2em;

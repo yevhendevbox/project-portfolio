@@ -7,14 +7,8 @@ export default defineNuxtConfig({
       mode: 'out-in',
     },
   },
-  // runtimeConfig: {
-  //   public: {
-  //     url: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
-  //     prefix: '/api',
-  //     version: 'v4',
-  //     cookie: {},
-  //     cookieName: 'strapi_jwt',
-  //   },
-  // },
+  build: {
+    transpile: ['gsap'],
+  },
   css: ['@/assets/css/styles.css'],
 });

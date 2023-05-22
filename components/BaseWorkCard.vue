@@ -4,7 +4,10 @@
       <NuxtLink :to="`/work/${props.project.id}`">
         <div class="work-card__info">
           <div class="work-card__info--text">
-            <h3>{{ props.project.title }}</h3>
+            <div id="work-card--title">
+              <div class="line-1">{{ props.project.title }}</div>
+              <div class="line-2">{{ props.project.title }}</div>
+            </div>
             <p>{{ props.project.description }}</p>
           </div>
           <div class="work-card__info--badge">
@@ -16,12 +19,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { isWorkTypeValid } from '~/validators';
 const props = defineProps({
   project: {
     type: Object,
     required: true,
-    // validation:
+    validation: isWorkTypeValid,
   },
 });
 </script>

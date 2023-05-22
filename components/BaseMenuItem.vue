@@ -7,18 +7,18 @@
   </li>
 </template>
 
-<script setup lang="ts">
-import { isPropNotUndefined } from '~/validators';
+<script setup>
+import { isPageValid } from '~/validators';
 
 const props = defineProps({
   link: {
     type: Object,
     required: true,
-    validation: isPropNotUndefined,
+    validation: isPageValid,
   },
 });
 </script>
-<script lang="ts">
+<script>
 export default {
   inheritAttrs: false,
 };

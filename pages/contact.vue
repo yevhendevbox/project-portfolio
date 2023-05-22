@@ -28,6 +28,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { LABEL_HOME, PAGE_HOME } from '~/constants';
 </script>

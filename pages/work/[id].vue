@@ -7,12 +7,14 @@
       <div class="project-description">
         <div class="project-description__pic">
           <img src="@/assets/images/home-ui.jpg" alt="" />
-          <base-button :to="PAGE_HOME" :label="LABEL_HOME">
-            <Icon name="material-symbols:arrow-outward" />
-          </base-button>
-          <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
-            <Icon name="material-symbols:arrow-outward" />
-          </base-button>
+          <div class="project-actions">
+            <base-button :to="PAGE_WORK" :label="LABEL_WORK">
+              <Icon name="material-symbols:arrow-outward" />
+            </base-button>
+            <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
+              <Icon name="material-symbols:arrow-outward" />
+            </base-button>
+          </div>
         </div>
         <div class="project-description__text">
           <div>
@@ -63,11 +65,11 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {
-  LABEL_HOME,
+  LABEL_WORK,
   LABEL_CONTACT,
-  PAGE_HOME,
+  PAGE_WORK,
   PAGE_CONTACT,
 } from '~/constants';
 const route = useRoute();

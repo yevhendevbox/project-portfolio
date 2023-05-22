@@ -11,16 +11,14 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { PropType } from 'nuxt/dist/app/compat/capi';
-import { SkillInterface } from '~/types';
-import { isSkillUndefined } from '~/validators';
+<script setup>
+import { isUndefined } from '~/validators';
 
 const props = defineProps({
   skill: {
-    type: Object as PropType<SkillInterface>,
+    type: Object,
     required: true,
-    validator: isSkillUndefined,
+    validator: isUndefined,
   },
 });
 </script>
