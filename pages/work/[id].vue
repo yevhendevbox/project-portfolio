@@ -51,7 +51,7 @@
             </li>
           </ul>
           <div class="project-description--tech">
-            <h5>Tech stack:</h5>
+            <h2>Tech stack:</h2>
             <p>
               Vue.js(v3), Vuex, VueRouter, Axios, TypeScript, PrimeVue,
               PrimeIcons, SCSS
