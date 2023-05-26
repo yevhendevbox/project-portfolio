@@ -3,6 +3,20 @@
     <div class="container">
       <div class="hero__title">
         <div class="hero__heading">YEVHEN DOVHAN</div>
+        <div class="hero__subtitle">
+          <div class="hero__subtitle--text">
+            I'm a front-end developer based in Kyiv, Ukraine. I'm building
+            things for the web. I like new technologies, always seeking new
+            knowledge.
+          </div>
+          <div class="hero__subtitle--text">
+            Currently, I'm focusing on building accessible, purposefull web
+            applications.
+          </div>
+          <div class="hero__subtitle--text">
+            I'm relly like clean and simple designe.
+          </div>
+        </div>
       </div>
     </div>
     <section class="skills">
