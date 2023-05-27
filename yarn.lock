@@ -3497,11 +3497,6 @@ graphql@^16.6.0:
   resolved "https://registry.npmjs.org/graphql/-/graphql-16.6.0.tgz"
   integrity sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==
 
-gsap@^3.11.5:
-  version "3.11.5"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.5.tgz#97ef65091f43868be387803f9db277e8cd5bd041"
-  integrity sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==
-
 gzip-size@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/gzip-size/-/gzip-size-7.0.0.tgz"
@@ -6240,11 +6235,6 @@ spdx-license-ids@^3.0.0:
   version "3.0.13"
   resolved "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.13.tgz"
   integrity sha512-XkD+zwiqXHikFZm4AX/7JSCXA98U5Db4AFd5XUg/+9UNtnH75+Z9KxtpYiJZx36mUDVOwH83pl7yvCer6ewM3w==
-
-split-type@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/split-type/-/split-type-0.3.3.tgz#5ed4503d96cddcccea1ca2dcae0bbc330ff3282e"
-  integrity sha512-gEA90DEHJhdT/5Da2gR7FPHgaGgivTN4PfZBtHKcl4quDLsE3x7tJlGTKEp4yyqpfi1wCaqeKE+s2UCqBRjJYA==
 
 ssri@^10.0.0:
   version "10.0.4"
