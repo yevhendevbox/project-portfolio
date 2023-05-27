@@ -45,6 +45,16 @@ const projects = [
     type: WORK_TYPE_PROJECT,
   },
 ];
+useHead({
+  title: 'Work | Y.D. portfolio web app',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Work page - Yevhen Dovhan portfolio web application. Here you can explore my recent projects, position jobs',
+    },
+  ],
+});
 </script>
 
 <style scoped></style>

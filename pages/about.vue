@@ -58,6 +58,17 @@ import {
   PAGE_CONTACT,
   LINK_DOWNLOAD,
 } from '~/constants';
+
+useHead({
+  title: 'About | Y.D. portfolio web app',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'About page - Yevhen Dovhan portfolio web application. I really like building things for the web, and always try to expand my knowledge',
+    },
+  ],
+});
 </script>
 
 <style scoped></style>

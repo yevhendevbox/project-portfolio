@@ -38,7 +38,7 @@
 import { LABEL_SKILLS, SKILLS_ANCHOR } from '~/constants';
 
 useHead({
-  title: 'Home | Y.D.',
+  title: 'Home | Y.D. portfolio web app',
   meta: [
     {
       name: 'description',
