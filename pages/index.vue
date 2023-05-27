@@ -13,16 +13,16 @@
             Currently, I'm focusing on building accessible, purposefull web
             applications.
           </div>
-          <div class="hero__subtitle--text">
-            I'm relly like clean and simple designe.
-          </div>
+          <base-button :to="SKILLS_ANCHOR" :label="LABEL_SKILLS">
+            <Icon name="material-symbols:arrow-outward" />
+          </base-button>
         </div>
       </div>
     </div>
     <section class="skills">
       <div class="container">
         <h2 class="bg-title">Hard Skills</h2>
-        <div class="skills-wrapper">
+        <div id="skills" class="skills-wrapper">
           <base-skill
             v-for="skill in skills"
             :key="skill.name"
@@ -35,6 +35,8 @@
 </template>
 
 <script setup>
+import { LABEL_SKILLS, SKILLS_ANCHOR } from '~/constants';
+
 useHead({
   title: 'Home | Y.D.',
   meta: [

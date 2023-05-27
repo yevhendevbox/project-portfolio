@@ -1,15 +1,17 @@
 <template>
   <header class="header">
     <nav class="header-links__wrapper" :class="{ open: isOpen }">
-      <ul class="header-links flex">
-        <base-menu-item
-          v-for="(link, index) in links"
-          :key="index"
-          :to="link.url"
-          :link="link"
-          @click="isOpen = false"
-        />
-      </ul>
+      <div class="container">
+        <ul class="header-links flex">
+          <base-menu-item
+            v-for="(link, index) in links"
+            :key="index"
+            :to="link.url"
+            :link="link"
+            @click="isOpen = false"
+          />
+        </ul>
+      </div>
     </nav>
     <div class="container flex">
       <div class="header-brand">Y.D.</div>

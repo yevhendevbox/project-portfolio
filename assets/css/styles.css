@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6,
-.hero__title {
+.hero__heading {
   font-family: var(--ff-h);
   font-weight: var(--bold);
   text-transform: uppercase;
@@ -194,6 +194,13 @@ h6,
   letter-spacing: -8px;
   overflow: hidden;
 }
+.hero__subtitle {
+  text-transform: uppercase;
+}
+.hero__subtitle .content__action{
+  margin-top: 2em;
+  font-size: var(--fz-md);
+}
 .hero__subtitle--text {
   font-family: var(--ff-p);
   font-size: var(--fz-md);
@@ -211,9 +218,6 @@ h6,
 .social-links {
   display: flex;
   gap: 4em;
-}
-.social-links {
-  gap: 1em;
 }
 /* ============================= =================================
                          Skills Section Styles
@@ -385,7 +389,6 @@ h6,
 }
 .work-card__info {
   display: flex;
-  max-width: 600px;
   justify-content: space-between;
   align-items: center;
   font-size: var(--fz-sm);
@@ -431,7 +434,6 @@ h6,
   padding: 4em 0;
 }
 .project-description__pic img {
-  max-width: 650px;
   margin-bottom: 4em;
 }
 .project-description__text {
@@ -469,12 +471,19 @@ h6,
                          Responsive Styles
 ============================= ================================= */
 @media screen and (min-width: 768px) {
+  .hero__heading {
+    font-size: 32rem;
+  }
+  .skills-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  .about-photo {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 991px) {
   .hero__title {
     padding-bottom: 10em;
-  }
-  .hero__heading {
-    font-size: 70rem;
-    letter-spacing: -40px;
   }
   .skills {
     position: relative;
@@ -493,43 +502,46 @@ h6,
   .work-title h1,
   .project-title h1,
   .bg-title {
-    font-size: 40rem;
-  }
-  .skills-wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    font-size: 20rem;
   }
   .about-content,
   .about-actions {
     flex-direction: row;
   }
+  .about-actions {
+    gap: .5em;
+  }
+  .about-photo {
+    align-self: center;
+  }
+  .about-photo img {
+    min-width: 400px;
+  }
   .work-content {
     padding: 12em 0;
     grid-template-columns: repeat(2, minmax(350px, 1fr));
     grid-template-rows: auto;
-    gap: 1em;
+    gap: 6em;
   }
-  .work-card {
-    min-width: 360px;
+}
+@media screen and (min-width: 1025px) {
+  .hero__title {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
-  .work-card__info {
-    gap: 2em;
-    padding: 2em 0;
+  .hero__heading {
+    grid-column: 1 / 5;
+    grid-row: 1 / 4;
+    font-size: 60rem;
+    letter-spacing: -24px;
   }
-  #work-card--title {
-    font-size: 4rem;
+  .header-links {
+    transform: translate(0, 100%);
+    right: 0;
   }
-  #work-card--title .line-1,
-  #work-card--title .line-2 {
-    line-height: 1.2;
-  }
-  .work-card__info--badge {
-    align-self: center;
-  }
-  #work-card--title:hover .line-1 {
-    transform: translateY(-5rem);
-  }
-  #work-card--title:hover .line-2 {
-    transform: translateY(-2rem);
+  .hero__subtitle--text {
+    line-height: 1.6;
   }
   .project-description {
     gap: 4em;
@@ -550,5 +562,69 @@ h6,
     max-width: 650px;
     margin-bottom: 4em;
   }
+  .work-card {
+    min-width: 360px;
+  }
+  .work-card__info {
+    max-width: 600px;
+    gap: 2em;
+    padding: 2em 0;
+  }
+  #work-card--title .line-1 {
+    transform: translateY(4.5rem);
+  }
+  #work-card--title .line-2 {
+    transform: translateY(5rem);
+  }
+  #work-card--title .line-1,
+  #work-card--title .line-2 {
+    line-height: 1.4;
+  }
+  .work-card__info--badge {
+    align-self: center;
+  }
+  #work-card--title:hover .line-1 {
+    transform: translateY(-5rem);
+  }
+  #work-card--title:hover .line-2 {
+    transform: translateY(-1rem);
+  }
 }
-@media screen and (min-width: 991px) {}
+@media screen and (min-width: 1151px) {
+  .hero__title {
+    grid-template-rows: auto;
+  }
+  .hero__heading {
+    font-size: 36rem;
+    letter-spacing: -18px;
+  }
+  .about-title h1,
+  .contact-title h1,
+  .work-title h1,
+  .project-title h1,
+  .bg-title {
+    font-size: 20rem;
+  }
+  #work-card--title {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .hero__title {
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .hero__heading {
+    font-size: 60rem;
+    letter-spacing: -40px;
+  }
+  .about-title h1,
+  .contact-title h1,
+  .work-title h1,
+  .project-title h1,
+  .bg-title {
+    font-size: 40rem;
+  }
+  #work-card--title {
+    font-size: 4rem;
+  }
+}
