@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@nuxt/devtools-edge": "^0.4.6-28059237.caf00d3",
+    "@nuxtjs/sanity": "^1.7.2",
     "eslint": "^8.37.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.7"

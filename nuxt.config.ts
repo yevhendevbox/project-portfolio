@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/eslint-module', '@nuxt/devtools-edge', 'nuxt-icon'],
+  modules: [
+    '@nuxtjs/eslint-module',
+    '@nuxt/devtools-edge',
+    'nuxt-icon',
+    '@nuxtjs/sanity',
+  ],
   app: {
     pageTransition: {
       name: 'page',
@@ -16,9 +21,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-  },
-  build: {
-    transpile: ['gsap'],
   },
   css: ['@/assets/css/styles.css'],
 });
