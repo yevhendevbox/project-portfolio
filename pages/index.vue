@@ -57,13 +57,25 @@
         </div>
       </div>
     </section>
+    <section class="contact-me">
+      <div class="container">
+        <div class="contact-me--content">
+          <h2>For more information feel free send me a message</h2>
+          <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
+            <Icon name="material-symbols:arrow-outward" />
+          </base-button>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
 import {
+  LABEL_CONTACT,
   LABEL_EXPLORE_WORK,
   LABEL_SKILLS,
+  PAGE_CONTACT,
   PAGE_WORK,
   SKILLS_ANCHOR,
 } from '~/constants';

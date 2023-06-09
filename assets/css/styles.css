@@ -41,9 +41,6 @@
   position: relative;
   font-weight: normal;
 }
-html {
-  scroll-snap-type: y mandatory;
-}
 html,
 body {
   margin: 0;
@@ -492,6 +489,24 @@ h6,
 .ricent-works--title {
   font-size: var(--fz-lg);
 }
+.contact-me {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image: var(--gradient);
+  padding: 8em 0;
+}
+.contact-me--content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  color: var(--midnight-dream);
+}
+.contact-me--content h2 {
+  font-size: 3rem;
+}
+.contact-me--content .content__action {
+  font-size: var(--fz-md);
+}
 /* ============================= =================================
                          Responsive Styles
 ============================= ================================= */
@@ -520,8 +535,16 @@ h6,
   .ricent-works {
     padding: 8em 0;
   }
+  .contact-me--content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 @media screen and (min-width: 1200px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
   .hero__title {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
