@@ -8,7 +8,7 @@
               <div class="line-1">{{ props.project.title }}</div>
               <div class="line-2">{{ props.project.title }}</div>
             </div>
-            <p>{{ props.project.description }}</p>
+            <p>{{ props.project.excerpt }}</p>
           </div>
           <div class="work-card__info--badge">
             {{ props.project.type }}

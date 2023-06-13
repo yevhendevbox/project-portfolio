@@ -14,37 +14,15 @@
 </template>
 
 <script setup>
-import { WORK_TYPE_POSITION, WORK_TYPE_PROJECT } from '~/constants';
-const projects = [
-  {
-    id: 1,
-    title: 'Home',
-    description: 'Cooperations social app',
-    imageSrc: 'home-ui.jpg',
-    type: WORK_TYPE_POSITION,
-  },
-  {
-    id: 2,
-    title: 'Form Settings App',
-    description: 'Project frontend dev position',
-    imageSrc: 'home-ui.jpg',
-    type: WORK_TYPE_PROJECT,
-  },
-  {
-    id: 3,
-    title: 'Portolio app',
-    description: 'Personal web application',
-    imageSrc: 'home-ui.jpg',
-    type: WORK_TYPE_PROJECT,
-  },
-  {
-    id: 4,
-    title: 'Weather tracking app',
-    description: 'Project frontend dev position',
-    imageSrc: 'home-ui.jpg',
-    type: WORK_TYPE_PROJECT,
-  },
-];
+const projects = ref([]);
+
+const query = groq`*[_type=="project"]{'id': _id, title,'slug': slug.current, excerpt, 'type': typeOfProject.projectBadge->title}`;
+const sanity = useSanity();
+const { data } = await useAsyncData(() => sanity.fetch(query));
+onMounted(() => {
+  projects.value = data._rawValue;
+});
+
 useHead({
   title: 'Work | Y.D. portfolio web app',
   meta: [

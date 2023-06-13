@@ -3,7 +3,10 @@
     <main class="hero">
       <div class="container">
         <div class="hero__title">
-          <div class="hero__heading">YEVHEN DOVHAN</div>
+          <div class="hero__heading">
+            <div class="hero__heading--word"><span>Yevhen</span></div>
+            <div class="hero__heading--word"><span>Dovhan</span></div>
+          </div>
           <div class="hero__subtitle">
             <div class="hero__subtitle--text">
               I'm a front-end developer based in Kyiv, Ukraine. I'm building
@@ -38,15 +41,14 @@
         <h6>Recent work.</h6>
         <div class="ricent-works--block">
           <div class="ricent-works--block__image">
-            <img src="@/assets/images/home-ui.jpg" alt="" />
+            <SanityImage :asset-id="recentProject.posterUri" auto="format" />
           </div>
           <div class="ricent-works--block__content">
             <div class="ricent-works--title">
-              <h2>Home-UI Social application</h2>
+              <h2>{{ recentProject.title }}</h2>
             </div>
             <div class="ricent-works--description">
-              Home - is an all-in-one social service that will cover all aspects
-              of your communication with your home and neighbors.
+              {{ recentProject.excerpt }}
             </div>
             <div class="ricent-works--controls">
               <base-button :to="PAGE_WORK" :label="LABEL_EXPLORE_WORK">
@@ -89,6 +91,21 @@ useHead({
     },
   ],
 });
+const recentProject = ref({
+  title: '',
+  posterUri: '',
+  slug: '',
+  excerpt: '',
+});
+
+const query = groq`*[isRecent==true]{title, 'posterUri': poster.asset._ref, 'slug': slug.current, excerpt}`;
+const sanity = useSanity();
+const { data } = await useAsyncData(() => sanity.fetch(query));
+
+onMounted(() => {
+  recentProject.value = data._rawValue[0];
+});
+
 const skills = [
   {
     name: 'Vue.js',

@@ -10,11 +10,12 @@
 :root {
   --black: #313132;
   --midnight-dream: #323436;
-  --onyx: #353434;
   --black-jack: #3D3D3E;
   --black-horizon: #44484d;
   --snow-white: #f1f5f1;
   --accent: #d4653e;
+  --space-black: #333334;
+  --deep-royal: #2F394B;
 
   --gradient: linear-gradient(135deg, #69FF97 10%, #00E4FF 100%);
 
@@ -47,7 +48,7 @@ body {
   padding: 0;
   font-family: var(--ff-p);
   font-size: 10px;
-  background: var(--black-horizon);
+  background: var(--space-black);
   color: var(--snow-white);
   scroll-behavior: smooth;
 }
@@ -209,6 +210,22 @@ h6,
   line-height: 1.4;
   padding: 1em 0;
 }
+.hero__heading--word {
+  overflow: hidden;
+}
+.hero__heading--word span {
+  display: block;
+  transform: translateY(0);
+  animation: popup .6s cubic-bezier(.14,.39,.94,.94);
+}
+@keyframes popup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /* ============================= =================================
                          Footer Styles
 ============================= ================================= */
@@ -228,7 +245,7 @@ h6,
   position: relative;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  background-color: var(--black);
+  background-color: var(--black-jack);
 }
 .skills-wrapper {
   padding: 10em .5em;
@@ -306,7 +323,7 @@ h6,
 .about-actions,
 .project-actions {
   display: flex;
-  gap: 2em;
+  gap: 1em;
 }
 .about-actions {
   flex-direction: column;
@@ -542,9 +559,6 @@ h6,
   }
 }
 @media screen and (min-width: 1200px) {
-  html {
-    scroll-snap-type: y mandatory;
-  }
   .hero__title {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -650,12 +664,5 @@ h6,
   }
   .ricent-works--block__image img {
     max-width: 600px;
-  }
-  .header,
-  .hero,
-  .skills,
-  .ricent-works {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
 }

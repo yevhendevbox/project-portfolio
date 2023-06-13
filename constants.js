@@ -13,11 +13,18 @@ export const LABEL_EXPLORE_WORK = 'Check my works';
 export const LABEL_CONTACT = 'Contact me';
 export const LABEL_DOWNLOAD_CV = 'Download CV';
 export const LABEL_SKILLS = 'My skills';
+export const SOURCE_CODE = 'Source code';
+export const FINAL_PRODUCT = 'Web site';
 
 export const WORK_TYPE_POSITION = 'position';
 export const WORK_TYPE_PROJECT = 'project';
+export const WORK_TYPE_FREELANCE = 'freelance';
 
-export const WORK_TYPES = [WORK_TYPE_POSITION, WORK_TYPE_PROJECT];
+export const WORK_TYPES = [
+  WORK_TYPE_POSITION,
+  WORK_TYPE_PROJECT,
+  WORK_TYPE_FREELANCE,
+];
 
 export const BUTTONS_LABEL = [
   LABEL_HOME,
@@ -26,4 +33,6 @@ export const BUTTONS_LABEL = [
   LABEL_CONTACT,
   LABEL_DOWNLOAD_CV,
   LABEL_SKILLS,
+  SOURCE_CODE,
+  FINAL_PRODUCT,
 ];

@@ -6,7 +6,7 @@
       </div>
       <div class="project-description">
         <div class="project-description__pic">
-          <img src="@/assets/images/home-ui.jpg" alt="" />
+          <SanityImage :asset-id="project.posterUri" auto="format" />
           <div class="project-actions">
             <base-button :to="PAGE_WORK" :label="LABEL_WORK">
               <Icon name="material-symbols:arrow-outward" />
@@ -14,50 +14,36 @@
             <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
               <Icon name="material-symbols:arrow-outward" />
             </base-button>
+            <base-button
+              :to="project.projectGithubUrl"
+              :label="SOURCE_CODE"
+              target="_blank"
+            >
+              <Icon name="material-symbols:arrow-outward" />
+            </base-button>
+            <base-button
+              v-show="project.productionUrl"
+              :to="project.productionUrl"
+              :label="FINAL_PRODUCT"
+              target="_blank"
+            >
+              <Icon name="material-symbols:arrow-outward" />
+            </base-button>
           </div>
         </div>
         <div class="project-description__text">
           <span>
-            Home - is an all-in-one social service that will cover all aspects
-            of your communication with your home and neighbors.
+            {{ project.title }}
           </span>
-          <ul>
-            <li>Internal notification and news system</li>
-            <li>
-              Private messages, chat with selected residents and general OSBB
-              group with all residents or OSBB's modules separately
-            </li>
-            <li>
-              Residents independently form a budget, determine contributions for
-              the maintenance of the house, the sequence of solving problems.
-              This makes it possible to quickly respond to emergencies, to
-              decide what needs to be done in the house or on the adjacent
-              territory in the first place, to ensure the protection of the
-              personal and common property of residents
-            </li>
-            <li>
-              The ability to choose a service provider such as (water,
-              electricity, gas), and pay utility bills
-            </li>
-            <li>
-              The best offers and wishes can be implemented in the OSBB by
-              residents through internal voting system
-            </li>
-            <li>
-              Transparency of expense. The residents' funds go exclusively to
-              the needs of their home and are spent rationally. The head of the
-              OSBB reports directly to the residents, so they are always aware
-              of what the funds were spent on
-            </li>
-          </ul>
+          <div style="white-space: break-spaces">
+            {{ project.description }}
+          </div>
           <div class="project-description--tech">
             <h2>Tech stack:</h2>
             <p>
-              Vue.js(v3), Vuex, VueRouter, Axios, TypeScript, PrimeVue,
-              PrimeIcons, SCSS
+              {{ project.techStack.join(', ') }}
             </p>
           </div>
-          <div>I am from: {{ route.params.id }}</div>
         </div>
       </div>
     </div>
@@ -70,6 +56,27 @@ import {
   LABEL_CONTACT,
   PAGE_WORK,
   PAGE_CONTACT,
+  SOURCE_CODE,
+  FINAL_PRODUCT,
 } from '~/constants';
+const project = ref({
+  title: '',
+  description: '',
+  posterUri: '',
+  projectGithubUrl: '',
+  productionUrl: '',
+  techStack: [],
+});
 const route = useRoute();
+const projectId = route.params.id;
+const query = groq`*[_type == 'project']{'id': _id, title, description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
+const sanity = useSanity();
+const { data } = await useAsyncData(() => sanity.fetch(query));
+
+onMounted(() => {
+  const currentProject = data._rawValue.filter(
+    (project) => project.id === projectId
+  )[0];
+  project.value = currentProject;
+});
 </script>

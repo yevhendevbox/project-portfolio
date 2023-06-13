@@ -6,6 +6,14 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxtjs/sanity',
   ],
+  runtimeConfig: {
+    public: {
+      sanity: {
+        projectId: 'ld9rfujx',
+        dataset: 'production',
+      },
+    },
+  },
   app: {
     pageTransition: {
       name: 'page',
