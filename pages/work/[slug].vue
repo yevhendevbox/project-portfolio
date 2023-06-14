@@ -61,6 +61,7 @@ import {
 } from '~/constants';
 const project = ref({
   title: '',
+  slug: '',
   description: '',
   posterUri: '',
   projectGithubUrl: '',
@@ -68,15 +69,24 @@ const project = ref({
   techStack: [],
 });
 const route = useRoute();
-const projectId = route.params.id;
-const query = groq`*[_type == 'project']{'id': _id, title, description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
+const slug = route.params.slug;
+const query = groq`*[_type == 'project']{'id': _id, title, 'slug': slug.current, description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
 const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 
 onMounted(() => {
   const currentProject = data._rawValue.filter(
-    (project) => project.id === projectId
+    (project) => project.slug === slug
   )[0];
+
+  if (!currentProject) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Project not found!',
+      fatal: true,
+    });
+  }
+
   project.value = currentProject;
 });
 </script>

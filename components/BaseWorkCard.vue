@@ -1,7 +1,7 @@
 <template>
   <div class="work-card__bg">
     <div class="work-card">
-      <NuxtLink :to="`/work/${props.project.id}`">
+      <NuxtLink :to="`/work/${props.project.slug}`">
         <div class="work-card__info">
           <div class="work-card__info--text">
             <div id="work-card--title">
