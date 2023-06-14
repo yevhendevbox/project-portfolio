@@ -2,7 +2,7 @@ export const PAGE_HOME = '/';
 export const PAGE_ABOUT = '/about';
 export const PAGE_WORK = '/work';
 export const PAGE_CONTACT = '/contact';
-export const LINK_DOWNLOAD = '/CV_YevhenDovhan.pdf';
+export const LINK_DOWNLOAD = '/CV_yevhen_dovhan.pdf';
 export const SKILLS_ANCHOR = '#skills';
 
 export const MENU_ITEMS = [PAGE_HOME, PAGE_WORK, PAGE_ABOUT, PAGE_CONTACT];

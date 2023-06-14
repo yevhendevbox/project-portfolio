@@ -117,43 +117,43 @@ const skills = [
     name: 'Nuxt.js',
     icon: 'logos:nuxt-icon',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'The Intuitive Web Framework. An open source framework under MIT license that makes web development simple and powerful.',
   },
   {
     name: 'JavaScript',
     icon: 'logos:javascript',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'JavaScript is a widely-used programming language for web development, enabling interactive and dynamic features on websites.',
   },
   {
     name: 'TypeScript',
     icon: 'logos:typescript-icon',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'TypeScript adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor.',
   },
   {
     name: 'Vuex',
     icon: 'vscode-icons:file-type-vueconfig',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application.',
   },
   {
     name: 'Pinia',
     icon: 'vscode-icons:file-type-vueconfig',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'Pinia The intuitive store for Vue.js Type Safe, Extensible, and Modular by design. Forget you are even using a store.',
   },
   {
     name: 'HTML',
     icon: 'devicon:html5',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'HTML (Hypertext Markup Language) is the backbone of the web. It is a markup language used to structure the content of web pages.',
   },
   {
     name: 'CSS',
     icon: 'devicon:css3',
     description:
-      'The Progressive JavaScript Framework. An approachable, performant and versatile framework for building web user interfaces.',
+      'Cascading Style Sheets (CSS) is a crucial component of web development. It is used to control the presentation and styling of web pages.',
   },
 ];
 </script>

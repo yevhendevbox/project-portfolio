@@ -10,12 +10,9 @@
 :root {
   --black: #313132;
   --midnight-dream: #323436;
-  --black-jack: #3D3D3E;
-  --black-horizon: #44484d;
-  --snow-white: #f1f5f1;
-  --accent: #d4653e;
   --space-black: #333334;
-  --deep-royal: #2F394B;
+  --black-jack: #3D3D3E;
+  --snow-white: #f1f5f1;
 
   --gradient: linear-gradient(135deg, #69FF97 10%, #00E4FF 100%);
 
@@ -144,7 +141,7 @@ h6,
 }
 .header-brand {
   display: flex;
-  color: #fff;
+  color: var(--snow-white);
   flex-direction: column;
   justify-content: center;
 }
@@ -165,7 +162,7 @@ h6,
   display: block;
   height: 1px;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--snow-white);
   transition: all .2s ease-in-out;
   transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0) skew(0deg, 0deg);
   transform-style: preserve-3d;
@@ -190,7 +187,7 @@ h6,
   padding: 2em 0 0 0;
 }
 .hero__heading {
-  font-size: 17.5rem;
+  font-size: 16rem;
   margin-bottom: 2rem;
   line-height: .8;
   letter-spacing: -8px;
@@ -363,7 +360,7 @@ h6,
 }
 .contact-content ul a {
   padding-bottom: 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--snow-white);
   transition: all .3s ease;
 }
 .contact-content ul a:hover {
@@ -384,7 +381,7 @@ h6,
   bottom: 0;
   left: 50%;
   position: absolute;
-  background: #fff;
+  background: var(--snow-white);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   z-index: -1;
 }
