@@ -95,6 +95,13 @@ h6,
 /* ============================= =================================
                          Header Styles
 ============================= ================================= */
+.sticky-header {
+  position: sticky;
+	top: 0;
+	padding: 1rem;
+	background-color: var(--midnight-dream);
+	backdrop-filter: saturate(180%) blur(10px);
+}
 .header {
   position: relative;
   background-color: var(--ebony-king);
@@ -410,8 +417,21 @@ h6,
   align-items: center;
   font-size: var(--fz-sm);
 }
+.work-card--tags {
+  margin: 2em 0 0 0;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+.work-card--tag {
+  padding: .5em 1em;
+  border-radius: 10px;
+  background-color: var(--black-jack);
+  font-size: var(--fz-sm);
+}
 .work-card__info--badge {
-  align-self: flex-end;
+  margin-top: 1.5em;
+  align-self: center;
   color: var(--black);
   background: var(--gradient);
   border-radius: 10px;
@@ -605,7 +625,6 @@ h6,
     min-width: 360px;
   }
   .work-card__info {
-    max-width: 600px;
     gap: 2em;
   }
   #work-card--title .line-1 {
@@ -617,9 +636,6 @@ h6,
   #work-card--title .line-1,
   #work-card--title .line-2 {
     line-height: 1.4;
-  }
-  .work-card__info--badge {
-    align-self: center;
   }
   #work-card--title:hover .line-1 {
     transform: translateY(-5rem);

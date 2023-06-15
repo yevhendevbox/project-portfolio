@@ -15,6 +15,15 @@
           </div>
         </div>
       </NuxtLink>
+      <div class="work-card--tags">
+        <div
+          v-for="(tag, idx) in props.project.techStack"
+          :key="idx"
+          class="work-card--tag"
+        >
+          {{ tag }}
+        </div>
+      </div>
     </div>
   </div>
 </template>

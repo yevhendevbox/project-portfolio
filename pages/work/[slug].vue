@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <Head>
+      <Title>{{ project.title + ' | Y.D. portfolio web app' }}</Title>
+      <Meta name="description" :content="project.excerpt" />
+    </Head>
     <div class="project-content">
       <div class="project-title">
         <h1>Project.</h1>
@@ -62,15 +66,17 @@ import {
 const project = ref({
   title: '',
   slug: '',
+  excerpt: '',
   description: '',
   posterUri: '',
   projectGithubUrl: '',
   productionUrl: '',
   techStack: [],
 });
+
 const route = useRoute();
 const slug = route.params.slug;
-const query = groq`*[_type == 'project']{'id': _id, title, 'slug': slug.current, description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
+const query = groq`*[_type == 'project']{'id': _id, title, 'slug': slug.current, excerpt,  description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
 const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 

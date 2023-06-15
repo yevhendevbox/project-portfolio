@@ -55,6 +55,22 @@ const links = [
 const handleToggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
+
+onMounted(() => {
+  const header = document.querySelector('.header');
+  const scrollWatcher = document.createElement('div');
+
+  scrollWatcher.setAttribute('data-scroll-watcher', '');
+  header.before(scrollWatcher);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      header.classList.toggle('sticky-header', !entries[0].isIntersecting);
+    },
+    { rootMargin: '50px 0px 0px 0px' }
+  );
+  observer.observe(scrollWatcher);
+});
 </script>
 
 <style scoped></style>
