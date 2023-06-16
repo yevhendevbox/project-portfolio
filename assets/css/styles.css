@@ -96,16 +96,14 @@ h6,
                          Header Styles
 ============================= ================================= */
 .sticky-header {
-  position: sticky;
-	top: 0;
 	padding: 1rem;
-	background-color: var(--midnight-dream);
-	backdrop-filter: saturate(180%) blur(10px);
+	backdrop-filter: saturate(120%) blur(20px);
 }
 .header {
-  position: relative;
-  background-color: var(--ebony-king);
-  padding: .8em 0;
+  position: sticky;
+	top: 0;
+  z-index: 3;
+  padding: 1.6em 0;
   font-size: var(--fz-md);
 }
 
@@ -362,7 +360,7 @@ h6,
   gap: 2em;
   flex-direction: column;
   justify-content: center;
-  font-size: var(--fz-md);
+  font-size: var(--fz-lg);
   line-height: 2;
 }
 .contact-content ul a {
@@ -378,6 +376,7 @@ h6,
   text-transform: uppercase;
   padding: 1rem .5em;
   position: relative;
+  font-size: var(--fz-md);
   z-index: 1;
 }
 .content__action a::after {
@@ -473,36 +472,34 @@ h6,
 .project-description__pic img {
   margin-bottom: 4em;
 }
+.project-description__pic .project-actions {
+  flex-wrap: wrap;
+  gap: 2em;
+}
 .project-description__text {
   display: flex;
   line-height: 1.5;
+  gap: 2em;
   font-size: var(--fz-md);
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
-.project-description__text span {
-  order: 1;
-}
-.project-description__text ul {
-  order: 2;
-  padding: 2em .5em;
-  list-style: disc;
-}
-.project-description__text ul li {
-  padding: .8em 0;
-}
+
 .project-description--tech {
   order: 0;
   padding-bottom: 1em;
   font-size: var(--fz-md);
 }
-.project-description--tech h5 {
-  font-size: var(--fz-md);
+.project-description--tech h2 {
   margin-bottom: 1em;
 }
 .project-description--tech p {
   line-height: 1.5;
   font-weight: var(--bold);
+}
+.project-description--tech__tags {
+  gap: .6em;
+  flex-wrap: wrap;
 }
 .ricent-works {
   padding-top: 2em;
@@ -661,6 +658,9 @@ h6,
     min-width: 650px;
     max-width: 650px;
     margin-bottom: 4em;
+  }
+  .project-description__pic .project-actions {
+    gap: 1em;
   }
   .ricent-works {
     padding: 17em 0;

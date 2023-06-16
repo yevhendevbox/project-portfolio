@@ -10,19 +10,15 @@
             </div>
             <p>{{ props.project.excerpt }}</p>
           </div>
-          <div class="work-card__info--badge">
-            {{ props.project.type }}
-          </div>
+          <base-work-badge :badge-type="props.project.type" />
         </div>
       </NuxtLink>
       <div class="work-card--tags">
-        <div
+        <base-tag
           v-for="(tag, idx) in props.project.techStack"
           :key="idx"
-          class="work-card--tag"
-        >
-          {{ tag }}
-        </div>
+          :tag-name="tag"
+        />
       </div>
     </div>
   </div>

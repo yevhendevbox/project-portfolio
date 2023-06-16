@@ -36,17 +36,21 @@
           </div>
         </div>
         <div class="project-description__text">
-          <span>
+          <h1>
             {{ project.title }}
-          </span>
+          </h1>
           <div style="white-space: break-spaces">
             {{ project.description }}
           </div>
           <div class="project-description--tech">
             <h2>Tech stack:</h2>
-            <p>
-              {{ project.techStack.join(', ') }}
-            </p>
+            <div class="flex project-description--tech__tags">
+              <base-tag
+                v-for="(tag, idx) in project.techStack"
+                :key="idx"
+                :tag-name="tag"
+              />
+            </div>
           </div>
         </div>
       </div>
