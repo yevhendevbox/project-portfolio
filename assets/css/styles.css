@@ -579,7 +579,6 @@ h6,
     grid-template-rows: auto;
   }
   .hero__heading {
-    font-size: 46rem;
     letter-spacing: -20px;
     grid-column: 1 / 5;
     grid-row: 1 / 4;
@@ -595,7 +594,7 @@ h6,
   .project-title h1,
   .ricent-works h6,
   .bg-title {
-    font-size: 30rem;
+    font-size: 24rem;
   }
   #work-card--title {
     font-size: 4rem;
@@ -675,6 +674,21 @@ h6,
   }
   .ricent-works--block__image img {
     max-width: 600px;
+  }
+}
+@media screen and (min-width: 1420px) {
+  .hero__heading {
+    font-size: 46rem;
+  }
+  .about-title h1,
+  .contact-title h1,
+  .work-title h1,
+  .project-title h1,
+  .bg-title {
+    font-size: 30rem;
+  }
+  .ricent-works h6 {
+    font-size: 26rem;
   }
 }
 @media screen and (min-width: 1640px) {
