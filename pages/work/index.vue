@@ -16,7 +16,7 @@
 <script setup>
 const projects = ref([]);
 
-const query = groq`*[_type=="project"]{'id': _id, title,'slug': slug.current, excerpt, techStack, 'type': typeOfProject.projectBadge->title}`;
+const query = groq`*[_type=="project"]{'id': _id, 'title': title.en,'slug': slug.current, 'excerpt': excerpt.en, techStack, 'type': typeOfProject.projectBadge->title}`;
 const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 onMounted(() => {
