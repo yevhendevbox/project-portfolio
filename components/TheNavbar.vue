@@ -6,7 +6,7 @@
           <base-menu-item
             v-for="(link, index) in links"
             :key="index"
-            :to="link.url"
+            :to="localePath(link.url)"
             :link="link"
             @click="isOpen = false"
           />
@@ -15,43 +15,62 @@
     </nav>
     <div class="container flex">
       <div class="header-brand">Y.D.</div>
-      <div
-        class="menu-button"
-        :class="{ toggled: isOpen }"
-        @click="handleToggleMenu"
-      >
-        <span class="button-line"></span>
-        <span class="button-line"></span>
+      <div class="header-actions">
+        <div class="header-locale">
+          <nuxt-link
+            v-for="{ code, name } in locales"
+            :key="code"
+            :to="swithcLocalePath(code)"
+          >
+            {{ code }}
+          </nuxt-link>
+        </div>
+        <div
+          class="menu-button"
+          :class="{ toggled: isOpen }"
+          @click="handleToggleMenu"
+        >
+          <span class="button-line"></span>
+          <span class="button-line"></span>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
+import { useLocalePath, useSwitchLocalePath } from 'vue-i18n-routing';
 import { PAGE_HOME, PAGE_ABOUT, PAGE_WORK, PAGE_CONTACT } from '~/constants';
+
+const { t } = useI18n();
+
 const isOpen = ref(false);
-const links = [
+const links = ref([
   {
     id: '1',
     url: PAGE_HOME,
-    label: 'Home',
+    label: t('home-link-label'),
   },
   {
     id: '2',
     url: PAGE_WORK,
-    label: 'Work',
+    label: t('work-link-label'),
   },
   {
     id: '3',
     url: PAGE_ABOUT,
-    label: 'About',
+    label: t('about-link-label'),
   },
   {
     id: '4',
     url: PAGE_CONTACT,
-    label: 'Contact',
+    label: t('contact-link-label'),
   },
-];
+]);
+const { locales } = useI18n();
+const swithcLocalePath = useSwitchLocalePath();
+const localePath = useLocalePath();
+
 const handleToggleMenu = () => {
   isOpen.value = !isOpen.value;
 };

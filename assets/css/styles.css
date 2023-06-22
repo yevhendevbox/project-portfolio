@@ -150,6 +150,18 @@ h6,
   flex-direction: column;
   justify-content: center;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+.header-locale {
+  display: flex;
+  gap: 1em;
+}
+.header-locale > * {
+  opacity: .6;
+}
 .menu-button {
   display: flex;
   flex-direction: column;
@@ -684,6 +696,9 @@ h6,
   }
   .ricent-works h6 {
     font-size: 38rem;
+  }
+  .title-uk {
+    font-size: 32rem !important;
   }
   .about-title h1,
   .contact-title h1,

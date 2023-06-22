@@ -4,11 +4,29 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     '@nuxt/devtools-edge',
     'nuxt-icon',
+    '@nuxtjs/i18n',
     '@nuxtjs/sanity',
   ],
   sanity: {
     projectId: 'ld9rfujx',
     dataset: 'production',
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: './en.json',
+      },
+      {
+        code: 'uk',
+        name: 'Ukrainian',
+        file: './uk.json',
+      },
+    ],
+    langDir: './locales/',
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
   },
   app: {
     pageTransition: {
@@ -16,6 +34,9 @@ export default defineNuxtConfig({
       mode: 'out-in',
     },
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
       title: 'Y.D. Portfolio web app',
       meta: [
         {
