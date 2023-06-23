@@ -104,6 +104,18 @@ onMounted(() => {
   recentProject.value = data._rawValue[0];
 });
 
+useHead({
+  title: `${t('meta-title-home')} | ${
+    locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+  }`,
+  meta: [
+    {
+      name: 'description',
+      content: t('meta-content-home'),
+    },
+  ],
+});
+
 const skills = [
   {
     name: 'Vue.js',

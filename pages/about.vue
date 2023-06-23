@@ -1,40 +1,35 @@
 <template>
   <div class="container">
     <div class="about-title">
-      <h1>Who am i</h1>
+      <h1>{{ t('about-title') }}</h1>
     </div>
     <div class="about-content">
       <div class="about-text">
         <p>
-          Hi there! I'm a front-end developer with almost 1 year of experience,
-          specializing in HTML, CSS, JavaScript, TypeScript, Vue.js, Vuex,
-          Pinia, Nuxt.js, REST API, GIT, and related technologies.
+          {{ t('about-text-p1') }}
         </p>
         <p>
-          As a team player, I enjoy collaborating with others and am always open
-          to learning from my colleagues. I'm a good listener and a friendly
-          person, which helps me communicate effectively with anyone, regardless
-          of their technical background. Whether I'm working on a new project or
-          maintaining an existing one, I always strive to deliver high-quality
-          code that meets the requirements of the business and the end-users.
-          I'm passionate about web development and love to stay up-to-date with
-          the latest trends and best practices in the field.
+          {{ t('about-text-p2') }}
         </p>
         <p>
-          I am currently actively seeking new job opportunities, and I am open
-          to any exciting projects that may come my way. If you are interested
-          in working together, please do not hesitate to reach out to me.
+          {{ t('about-text-p3') }}
         </p>
         <div class="about-actions">
-          <base-button :to="PAGE_HOME" :label="LABEL_HOME">
-            <Icon name="material-symbols:arrow-outward" />
-          </base-button>
-          <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
+          <base-button
+            :to="localePath(PAGE_HOME)"
+            :label="t('back-home-label')"
+          >
             <Icon name="material-symbols:arrow-outward" />
           </base-button>
           <base-button
-            :to="LINK_DOWNLOAD"
-            :label="LABEL_DOWNLOAD_CV"
+            :to="localePath(PAGE_CONTACT)"
+            :label="t('contact-me-label')"
+          >
+            <Icon name="material-symbols:arrow-outward" />
+          </base-button>
+          <base-button
+            :to="localePath(LINK_DOWNLOAD)"
+            :label="t('download-cv-label')"
             target="_blank"
             download
           >
@@ -50,22 +45,20 @@
 </template>
 
 <script setup>
-import {
-  LABEL_HOME,
-  LABEL_CONTACT,
-  LABEL_DOWNLOAD_CV,
-  PAGE_HOME,
-  PAGE_CONTACT,
-  LINK_DOWNLOAD,
-} from '~/constants';
+import { useLocalePath } from 'vue-i18n-routing';
+import { PAGE_HOME, PAGE_CONTACT, LINK_DOWNLOAD } from '~/constants';
+
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
 
 useHead({
-  title: 'About | Y.D. portfolio web app',
+  title: `${t('meta-title-about')} | ${
+    locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+  }`,
   meta: [
     {
       name: 'description',
-      content:
-        'About page - Yevhen Dovhan portfolio web application. I really like building things for the web, and always try to expand my knowledge',
+      content: t('meta-content-about'),
     },
   ],
 });

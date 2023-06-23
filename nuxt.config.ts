@@ -37,14 +37,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Y.D. Portfolio web app',
-      meta: [
-        {
-          name: 'description',
-          content:
-            'Welcome to the personal portfolio web application of Yevhen Dovhan, front-end developer. Browse through a collection of my web projects. Explore the portfolio and discover the work, contact me if you have job propositions.',
-        },
-      ],
     },
   },
   css: ['@/assets/css/styles.css'],
