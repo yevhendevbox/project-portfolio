@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="work-title">
-      <h1>my works</h1>
+      <h1>{{ t('work-title') }}</h1>
     </div>
     <div class="work-content">
       <base-work-card
@@ -15,8 +15,9 @@
 
 <script setup>
 const projects = ref([]);
+const { t, locale } = useI18n();
 
-const query = groq`*[_type=="project"]{'id': _id, 'title': title.en,'slug': slug.current, 'excerpt': excerpt.en, techStack, 'type': typeOfProject.projectBadge->title}`;
+const query = groq`*[_type=="project"]{'id': _id, title,'slug': slug.current, excerpt, techStack, 'type': typeOfProject.projectBadge->title}`;
 const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 onMounted(() => {
@@ -24,12 +25,13 @@ onMounted(() => {
 });
 
 useHead({
-  title: 'Work | Y.D. portfolio web app',
+  title: `${t('meta-title-work')} | ${
+    locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+  }`,
   meta: [
     {
       name: 'description',
-      content:
-        'Work page - Yevhen Dovhan portfolio web application. Here you can explore my recent projects, position jobs',
+      content: t('meta-content-work'),
     },
   ],
 });

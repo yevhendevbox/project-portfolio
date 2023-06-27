@@ -1,26 +1,37 @@
 <template>
   <div class="container">
     <Head>
-      <Title>{{ project.title + ' | Y.D. portfolio web app' }}</Title>
-      <Meta name="description" :content="project.excerpt" />
+      <Title>{{
+        project.title[locale] +
+        ` | ${
+          locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+        }`
+      }}</Title>
+      <Meta name="description" :content="project.excerpt[locale]" />
     </Head>
     <div class="project-content">
       <div class="project-title">
-        <h1>Project.</h1>
+        <h1>{{ t('project-title') }}</h1>
       </div>
       <div class="project-description">
         <div class="project-description__pic">
           <SanityImage :asset-id="project.posterUri" auto="format" />
           <div class="project-actions">
-            <base-button :to="PAGE_WORK" :label="LABEL_WORK">
+            <base-button
+              :to="localePath(PAGE_WORK)"
+              :label="t('back-to-work-label')"
+            >
               <Icon name="material-symbols:arrow-outward" />
             </base-button>
-            <base-button :to="PAGE_CONTACT" :label="LABEL_CONTACT">
+            <base-button
+              :to="localePath(PAGE_CONTACT)"
+              :label="t('contact-me-label')"
+            >
               <Icon name="material-symbols:arrow-outward" />
             </base-button>
             <base-button
               :to="project.projectGithubUrl"
-              :label="SOURCE_CODE"
+              :label="t('source-code-label')"
               target="_blank"
             >
               <Icon name="material-symbols:arrow-outward" />
@@ -37,13 +48,13 @@
         </div>
         <div class="project-description__text">
           <h1>
-            {{ project.title }}
+            {{ project.title[locale] }}
           </h1>
           <div style="white-space: break-spaces">
             {{ project.description }}
           </div>
           <div class="project-description--tech">
-            <h2>Tech stack:</h2>
+            <h2>{{ t('tech-stack') }}</h2>
             <div class="flex project-description--tech__tags">
               <base-tag
                 v-for="(tag, idx) in project.techStack"
@@ -59,14 +70,8 @@
 </template>
 
 <script setup>
-import {
-  LABEL_WORK,
-  LABEL_CONTACT,
-  PAGE_WORK,
-  PAGE_CONTACT,
-  SOURCE_CODE,
-  FINAL_PRODUCT,
-} from '~/constants';
+import { useLocalePath } from 'vue-i18n-routing';
+import { PAGE_WORK, PAGE_CONTACT, FINAL_PRODUCT } from '~/constants';
 const project = ref({
   title: '',
   slug: '',
@@ -77,6 +82,8 @@ const project = ref({
   productionUrl: '',
   techStack: [],
 });
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
 
 const route = useRoute();
 const slug = route.params.slug;

@@ -16,9 +16,12 @@
           <a href="mailto:y.d.devbox@gmail.com">y.d.devbox@gmail.com</a>
         </li>
         <li>
-          {{ t('contact-on-internet') }} <a href="">LinkedIn</a> /
-          <a href="">GitHub</a> /
-          <a href="">Twitter</a>
+          {{ t('contact-on-internet') }}
+          <a href="https://www.linkedin.com/in/yevhen-dovhan/" target="_blank"
+            >LinkedIn</a
+          >
+          / <a href="https://github.com/yevhendevbox">GitHub</a> /
+          <a href="https://twitter.com/yevhen_dovhan">Twitter</a>
         </li>
       </ul>
       <base-button :to="localePath(PAGE_HOME)" :label="t('back-home-label')">

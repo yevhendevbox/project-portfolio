@@ -38,5 +38,12 @@
   "contact-email": "Email:",
   "contact-on-internet": "On the Internet:",
   "meta-title-contact": "Contact",
-  "meta-content-contact": "Get in touch with Yevhen Dovhan for collaborations, inquiries, or to discuss potential projects. Contact Yevhen Dovhan via email or through the any social platform."
+  "meta-content-contact": "Get in touch with Yevhen Dovhan for collaborations, inquiries, or to discuss potential projects. Contact Yevhen Dovhan via email or through the any social platform.",
+  "work-title": "my works",
+  "meta-title-work": "Work",
+  "meta-content-work": "Work page - Yevhen Dovhan portfolio web application. Here you can explore my recent projects, position jobs",
+  "project-title": "Project.",
+  "back-to-work-label": "back to work",
+  "source-code-label": "source code",
+  "tech-stack": "tech-stack"
 }

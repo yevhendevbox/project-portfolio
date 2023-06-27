@@ -18,7 +18,7 @@
       <div class="header-actions">
         <div class="header-locale">
           <nuxt-link
-            v-for="{ code, name } in locales"
+            v-for="{ code } in locales"
             :key="code"
             :to="swithcLocalePath(code)"
           >
