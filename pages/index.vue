@@ -104,7 +104,7 @@ const recentProject = ref({
   excerpt: '',
 });
 
-const query = groq`*[isRecent==true]{'title': title.en, 'posterUri': poster.asset._ref, 'slug': slug.current, 'excerpt': excerpt.en}`;
+const query = groq`*[isRecent==true]{title, 'posterUri': poster.asset._ref, 'slug': slug.current, excerpt}`;
 const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 

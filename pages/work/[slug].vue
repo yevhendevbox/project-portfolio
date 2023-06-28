@@ -87,7 +87,7 @@ const localePath = useLocalePath();
 
 const route = useRoute();
 const slug = route.params.slug;
-const query = groq`*[_type == 'project']{'id': _id, 'title': title.en, 'slug': slug.current, 'excerpt': excerpt.en,  description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
+const query = groq`*[_type == 'project']{'id': _id, title, 'slug': slug.current, excerpt,  description, 'posterUri': poster.asset._ref, projectGithubUrl, productionUrl, techStack}`;
 const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 
