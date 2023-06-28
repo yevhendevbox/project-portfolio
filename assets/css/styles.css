@@ -150,6 +150,18 @@ h6,
   flex-direction: column;
   justify-content: center;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+.header-locale {
+  display: flex;
+  gap: 1em;
+}
+.header-locale > * {
+  opacity: .6;
+}
 .menu-button {
   display: flex;
   flex-direction: column;
@@ -448,18 +460,18 @@ h6,
 }
 #work-card--title .line-1 {
   opacity: .6;
-  transform: translateY(2.5rem);
+  transform: translateY(0rem);
   transition: transform .3s ease;
 }
 #work-card--title .line-2 {
-  transform: translateY(4rem);
+  transform: translateY(6rem);
   transition: transform .3s ease;
 }
 #work-card--title:hover .line-1 {
-  transform: translateY(-2rem);
+  transform: translateY(-4rem);
 }
 #work-card--title:hover .line-2 {
-  transform: translateY(-.5rem);
+  transform: translateY(3rem);
 }
 .project-description {
   display: flex;
@@ -625,10 +637,10 @@ h6,
     gap: 2em;
   }
   #work-card--title .line-1 {
-    transform: translateY(4.5rem);
+    transform: translateY(-1rem);
   }
   #work-card--title .line-2 {
-    transform: translateY(5rem);
+    transform: translateY(10rem);
   }
   #work-card--title .line-1,
   #work-card--title .line-2 {
@@ -638,7 +650,7 @@ h6,
     transform: translateY(-5rem);
   }
   #work-card--title:hover .line-2 {
-    transform: translateY(-1rem);
+    transform: translateY(5rem);
   }
   .project-description {
     gap: 4em;
@@ -698,6 +710,9 @@ h6,
   }
   .ricent-works h6 {
     font-size: 38rem;
+  }
+  .title-uk {
+    font-size: 32rem !important;
   }
   .about-title h1,
   .contact-title h1,

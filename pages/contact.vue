@@ -1,27 +1,30 @@
 <template>
   <div class="container">
     <div class="contact-title">
-      <h1>Greetings.</h1>
+      <h1>{{ t('contact-title') }}</h1>
     </div>
     <div class="contact-content">
       <p>
-        I can help designe and build you next website. Contact me for more
-        detailed information.
+        {{ t('contact-text-p1') }}
       </p>
       <p>
-        May be your company have an open web developer position, related to my
-        skills.
+        {{ t('contact-text-p2') }}
       </p>
       <ul>
         <li>
-          Email: <a href="mailto:y.d.devbox@gmail.com">y.d.devbox@gmail.com</a>
+          {{ t('contact-email') }}
+          <a href="mailto:y.d.devbox@gmail.com">y.d.devbox@gmail.com</a>
         </li>
         <li>
-          On the internet: <a href="">LinkedIn</a> / <a href="">GitHub</a> /
-          <a href="">Twitter</a>
+          {{ t('contact-on-internet') }}
+          <a href="https://www.linkedin.com/in/yevhen-dovhan/" target="_blank"
+            >LinkedIn</a
+          >
+          / <a href="https://github.com/yevhendevbox">GitHub</a> /
+          <a href="https://twitter.com/yevhen_dovhan">Twitter</a>
         </li>
       </ul>
-      <base-button :to="PAGE_HOME" :label="LABEL_HOME">
+      <base-button :to="localePath(PAGE_HOME)" :label="t('back-home-label')">
         <Icon name="material-symbols:arrow-outward" />
       </base-button>
     </div>
@@ -29,5 +32,21 @@
 </template>
 
 <script setup>
-import { LABEL_HOME, PAGE_HOME } from '~/constants';
+import { useLocalePath } from 'vue-i18n-routing';
+import { PAGE_HOME } from '~/constants';
+
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
+
+useHead({
+  title: `${t('meta-title-contact')} | ${
+    locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+  }`,
+  meta: [
+    {
+      name: 'description',
+      content: t('meta-content-contact'),
+    },
+  ],
+});
 </script>
