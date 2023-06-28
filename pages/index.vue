@@ -54,7 +54,10 @@
               {{ recentProject.excerpt[locale] }}
             </div>
             <div class="ricent-works--controls">
-              <base-button :to="PAGE_WORK" :label="t('my-works-label')">
+              <base-button
+                :to="localePath(PAGE_WORK)"
+                :label="t('my-works-label')"
+              >
                 <Icon name="material-symbols:arrow-outward" />
               </base-button>
             </div>
@@ -66,7 +69,10 @@
       <div class="container">
         <div class="contact-me--content">
           <h2>{{ t('contact-me-title') }}</h2>
-          <base-button :to="PAGE_CONTACT" :label="t('contact-me-label')">
+          <base-button
+            :to="localePath(PAGE_CONTACT)"
+            :label="t('contact-me-label')"
+          >
             <Icon name="material-symbols:arrow-outward" />
           </base-button>
         </div>
@@ -76,6 +82,7 @@
 </template>
 
 <script setup>
+import { useLocalePath } from 'vue-i18n-routing';
 import { PAGE_CONTACT, PAGE_WORK, SKILLS_ANCHOR } from '~/constants';
 
 useHead({
@@ -88,6 +95,7 @@ useHead({
   ],
 });
 const { t, locale } = useI18n();
+const localePath = useLocalePath();
 
 const recentProject = ref({
   title: '',

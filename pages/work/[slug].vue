@@ -51,7 +51,7 @@
             {{ project.title[locale] }}
           </h1>
           <div style="white-space: break-spaces">
-            {{ project.description }}
+            {{ project.description[locale] }}
           </div>
           <div class="project-description--tech">
             <h2>{{ t('tech-stack') }}</h2>
