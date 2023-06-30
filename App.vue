@@ -1,8 +1,20 @@
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <NuxtPage
+      :transition="{
+        name: 'page',
+        mode: 'out-in',
+        onBeforeEnter,
+      }"
+    />
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
+const { finalizePendingLocaleChange } = useI18n();
+
+const onBeforeEnter = async () => {
+  await finalizePendingLocaleChange();
+};
+</script>
 <style scoped></style>
