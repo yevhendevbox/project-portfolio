@@ -1,5 +1,13 @@
 <template>
   <div class="container">
+    <Head>
+      <Title>{{
+        `${t('meta-title-work')} | ${
+          locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+        }`
+      }}</Title>
+      <Meta name="description" :content="t('meta-content-work')" />
+    </Head>
     <div class="work-title">
       <h1>{{ t('work-title') }}</h1>
     </div>
@@ -22,18 +30,6 @@ const sanity = useSanity();
 const { data } = await useAsyncData(() => sanity.fetch(query));
 onMounted(() => {
   projects.value = data._rawValue;
-});
-
-useHead({
-  title: `${t('meta-title-work')} | ${
-    locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
-  }`,
-  meta: [
-    {
-      name: 'description',
-      content: t('meta-content-work'),
-    },
-  ],
 });
 </script>
 

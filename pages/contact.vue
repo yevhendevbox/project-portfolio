@@ -1,5 +1,13 @@
 <template>
   <div class="container">
+    <Head>
+      <Title>{{
+        `${t('meta-title-contact')} | ${
+          locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
+        }`
+      }}</Title>
+      <Meta name="description" :content="t('meta-content-contact')" />
+    </Head>
     <div class="contact-title">
       <h1>{{ t('contact-title') }}</h1>
     </div>
@@ -37,16 +45,4 @@ import { PAGE_HOME } from '~/constants';
 
 const { t, locale } = useI18n();
 const localePath = useLocalePath();
-
-useHead({
-  title: `${t('meta-title-contact')} | ${
-    locale === 'en' ? 'Y.D. Portfolio web app' : 'Y.D. Портфоліо сайт'
-  }`,
-  meta: [
-    {
-      name: 'description',
-      content: t('meta-content-contact'),
-    },
-  ],
-});
 </script>
