@@ -24,15 +24,12 @@ export default defineNuxtConfig({
         file: './uk.json',
       },
     ],
+    skipSettingLocaleOnNavigate: true,
     langDir: './locales/',
     defaultLocale: 'en',
     strategy: 'prefix_except_default',
   },
   app: {
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
-    },
     head: {
       htmlAttrs: {
         lang: 'en',

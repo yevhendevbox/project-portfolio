@@ -42,34 +42,32 @@
 import { useLocalePath, useSwitchLocalePath } from 'vue-i18n-routing';
 import { PAGE_HOME, PAGE_ABOUT, PAGE_WORK, PAGE_CONTACT } from '~/constants';
 
-const { t } = useI18n();
-
 const isOpen = ref(false);
-const links = ref([
+const links = [
   {
     id: '1',
     url: PAGE_HOME,
-    label: t('home-link-label'),
+    label: 'home',
   },
   {
     id: '2',
     url: PAGE_WORK,
-    label: t('work-link-label'),
+    label: 'work',
   },
   {
     id: '3',
     url: PAGE_ABOUT,
-    label: t('about-link-label'),
+    label: 'about',
   },
   {
     id: '4',
     url: PAGE_CONTACT,
-    label: t('contact-link-label'),
+    label: 'contact',
   },
-]);
-const { locales } = useI18n();
+];
 const swithcLocalePath = useSwitchLocalePath();
 const localePath = useLocalePath();
+const { locales } = useI18n();
 
 const handleToggleMenu = () => {
   isOpen.value = !isOpen.value;
